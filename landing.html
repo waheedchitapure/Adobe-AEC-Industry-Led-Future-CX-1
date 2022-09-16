@@ -1,0 +1,453 @@
+<html>
+
+<head>
+    <title>
+        Thinking beyond the third-party cookie.
+    </title>
+    <link rel="stylesheet" href="https://resources.pangeaglobalservices.com/whitepapers/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://resources.pangeaglobalservices.com/whitepapers/css/landing.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://jqueryvalidation.org/files/lib/jquery.js"></script>
+    <script src="https://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function () {
+            $.validator.addMethod('nofreeemail', function (value) {
+                return /^([\w-.]+@(?!gmail\.com)(?!yahoo\.com)(?!hotmail\.com)(?!facebook\.com)(?!gmail\.com)(?!gmx\.com)(?!googlemail\.com)(?!hotmail\.com)(?!mac\.com)(?!me\.com)(?!mail\.com)(?!msn\.com)(?!yahoo\.com)(?!aol\.com)(?!google\.com)(?!live\.com)(?!att\.net)(?!comcast\.net)(?!sbcglobal\.net)(?!verizon\.net)([\w-]+.)+[\w-]{2,4})?$/.test(value);
+            }, 'Free email addresses are not allowed.');
+
+            // validate signup form on keyup and submit
+            $("#signup_form").validate({
+                errorElement: 'span',
+                rules: {
+                    firstname: {
+                        required: true,
+                    },
+                    lastname: {
+                        required: true,
+                    },
+                    company: {
+                        required: true,
+                    },
+                    job_function: {
+                        required: true,
+                    },
+                    email: {
+                        required: true,
+                        nofreeemail: true,
+                        email: true
+                    },
+                    work_phone: {
+                        required: true,
+                        number: true
+                    },
+                    city: {
+                        required: true,
+                    },
+                    state: {
+                        required: true,
+                    },
+                    zip: {
+                        required: true,
+                    },
+                    country: {
+                        required: true,
+                    },
+                    Industry: {
+                        required: true,
+                    },
+                    address_street1: {
+                        required: true,
+                    },
+                    std1: {
+                        required: true,
+                    },
+                    std2: {
+                        required: true,
+                    },
+                    std3: {
+                        required: true,
+                    },
+                    std4: {
+                        required: true,
+                    },
+                    std5: {
+                        required: true,
+                    },
+                    std6: {
+                        required: true,
+                    },
+                    camp_id: {
+                        required: true,
+                    },
+                    camp_code: {
+                        required: true,
+                    },
+                    std7: {
+                        required: true,
+                    }
+                },
+                messages: {
+                    firstname: {
+                        required: "This field is required."
+                    },
+                    lastname: {
+                        required: "The details are incorrect/incomplete"
+                    },
+                    company: {
+                        required: "The details are incorrect/incomplete"
+                    },
+                    job_function: {
+                        required: "The details are incorrect/incomplete"
+                    },
+                    email: {
+                        required: "Please enter an email address",
+                   < !--nofreeemail: "Please enter your business email, generic email not allowed", -- >
+                    email: "Please enter a valid email address"
+                 },
+                work_phone: {
+                required: "The details are incorrect/incomplete",
+                number: "Phone number must contain digits only"
+            },
+                city: {
+                required: "The details are incorrect/incomplete"
+            },
+                state: {
+                required: "The details are incorrect/incomplete"
+            },
+                country: {
+                required: "The details are incorrect/incomplete"
+            },
+                Industry: {
+                required: "The details are incorrect/incomplete"
+            },
+                zip: {
+                required: "The details are incorrect/incomplete",
+                number: "Zip code must contain digits only",
+                rangelength: "Zip code must have between 3 to 5 digits"
+            },
+                address_street1: {
+                required: "The details are incorrect/incomplete"
+            },
+                std1: {
+                required: "The details are incorrect/incomplete"
+            },
+                std2: {
+                required: "The details are incorrect/incomplete"
+            },
+                std3: {
+                required: "The details are incorrect/incomplete"
+            },
+                std4: {
+                required: "The details are incorrect/incomplete"
+            },
+                std5: {
+                required: "The details are incorrect/incomplete"
+            },
+                std6: {
+                required: "The details are incorrect/incomplete"
+            },
+                camp_id: {
+                required: "The details are incorrect/incomplete"
+            },
+                camp_code: {
+                required: "The details are incorrect/incomplete"
+            },
+                std7: {
+                required: "The details are incorrect/incomplete"
+            }
+               }
+             });
+          });
+    </script>
+    <style>
+        .form-control {
+            background-color: #f2f2f2;
+            margin-bottom: 5px
+        }
+
+        #star {
+            color: red;
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                width: 1050px;
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color: #00000;">
+    <div class="container" style="">
+        <div class="row" style="background-color: #00000; margin-right: 0px;">
+            <div class="col-md-6" style="margin-left: 20px;margin-top: 5px;">
+                <!--SPONSER LOGO START-->
+                <img src="./logo.png" width="250" alt="" style=" margin-bottom: 10px;padding-top: 20px; "
+                    class="img-responsive" />
+                <!--SPONSER LOGO END-->
+            </div>
+        </div>
+        <br>
+        <header
+            style="background-color: #eb1000;background-image: url('./background.PNG'); background-repeat: no-repeat;background-size: cover;color:rgb(255, 0, 0) ;height: 150px;">
+
+
+            <div align="left" class="span12 center">
+
+                <!--TITLE START-->
+                <p
+                    style=" font-size: 35px; color: rgb(255, 255, 255); font-weight: bold; padding-top: 30px; font-family: Arial, sans-serif;padding-bottom: 30px;padding-left: 10px;">
+                    Thinking beyond the third-party cookie.
+                </p>
+                <!--TITLE END-->
+
+            </div>
+        </header>
+        <div class="panel">
+            <div class="" style="background-color: white;padding-bottom: ;">
+                <div style="padding: ;">
+                    <div class="col-md-7">
+                        <br><br><br>
+                        <center>
+                            <!--THUMBNAIL START-->
+                            <img src="./img.PNG" class="img-responsive" width="300" style="border: 1px solid black;">
+                            <!--THUMBNAIL END-->
+                            <br>
+                            <!--ABSTRACT START HERE-->
+                            <p
+                                style="width: 100%;font-size:16px;text-align: left;color:#333333;font-family: Arial, Helvetica, sans-serif;line-height: 23px;">
+                                Prepare for life after the third-party cookie.
+                                <br><br>
+                                As the demand for data privacy and more personalized experiences meets the end of
+                                tracking third-party
+                                cookies, marketers are met with an opportunity to transform both their acquisition
+                                strategies and their
+                                customer experiences.
+                                <br><br>
+                                Read Thinking Beyond the Third-party Cookie to learn how Adobe can help you thrive in a
+                                cookieless
+                                world.
+                            </p>
+
+                            <!-- <ul style="width: 100%;font-size: 16px;color:#333333;;text-align:left;">
+                         <li>How to effectively develop your law firm’s brand</li>
+                         <li>The unique marriage between social media and branding</li>
+                         <li>How to prevent your messages from getting lost in the crowd</li>
+                      </ul> -->
+                            <!--ABSTRACT END HERE-->
+                        </center>
+                    </div>
+                    <!-- form start -->
+                    <div class="col-md-5"
+                        style="margin-top:30px ; background-color: #e6e4e4; padding-bottom: 0px;border-radius: 20px ;padding-left: 40px ">
+                        <center>
+                            <form action="./sendmail.php"
+                                 method="post" class="validate" style="">
+                                <br><br>
+                                <!--XXX ... DON'T CHANGE THIS CODE ... XXX-->
+                                <input type="hidden" name="camp_type" id="camp_type" value="Whitepaper" />
+                                <input type="hidden" name="camp_id" id="camp_id" value="BE03AD" />
+                                <input type="hidden" name="camp_name" value="Adobe" />
+                                <input type="hidden" name="asset_title" value="Thinking beyond the third-party cookie." />
+                                <input type="hidden" name="thumbnail" value="Adobe AEC Industry Led Future CX " />
+                                <!--XXX ... DON'T CHANGE THIS CODE ... XXX-->
+                                <center>
+                                    <strong>
+                                        <!-- <h3 style="color: black;text-align:left ; padding: 0px;"><br>Overcome IT Operetions Management Challanges with AIOps<br></h3> -->
+                                        <h5 style="color: black; text-align:left; padding: 0px;">
+
+                                            Please fill out the form to download
+                                        </h5>
+                                        <br>
+                                    </strong>
+                                    <div class="row" style="text-align: left;">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input id="firstname" name="fname" type="text" value=""
+                                                    class="form-control" placeholder="First Name" required="required" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input id="lastname" name="data[0]" type="text" value=""
+                                                    class="form-control" placeholder="Last Name" required="required" />
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input id="email" name="data[1]" type="Email" value=""
+                                                    class="form-control" placeholder="Business Email"
+                                                    required="required" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input id="phone" name="data[2]" type="text" value=""
+                                                    class="form-control" placeholder="Business Phone"
+                                                    required="required" />
+                                            </div>
+
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input id="company" name="data[3]" type="text" value=""
+                                                    class="form-control" placeholder="Company Name"
+                                                    required="required" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <select name="data[4]" id="job_title" class="form-control"
+                                                    required="required">
+                                                    <option value="">Job Title</option>
+
+                                                    <option value="Senior Director/Director">Senior Director/Director
+                                                    </option>
+                                                    <option value="SVP/VP">SVP/VP</option>
+                                                    <option value="CXO/EVP">CXO/EVP</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <br />
+
+                                        <div class="col-md-12" style="padding-left: 0px;  padding-right: 40">
+                                            <select name="data[5]" id="department" class="form-control"
+                                                required="required">
+                                                <option value="">Functional area / Department</option>
+
+                                                <option value="IT: Desktop Applications">IT: Desktop Applications
+                                                </option>
+                                                <option value="IT: Enterprise/Cloud Applications">IT: Enterprise/Cloud
+                                                    Applications</option>
+                                                <option value="IT: Operations/General">IT: Operations/General</option>
+                                                <option value="IT: Mobile Applications">IT: Mobile Applications</option>
+
+                                            </select>
+                                        </div>
+
+                                        <br><br><br>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <select name="data[6]" id="country" class="form-control"
+                                                    required="required">
+                                                    <option value="">Country/Region</option>
+                                                    <option value="United States">United States</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <select name="data[7]" id="state" class="form-control"
+                                                    required="required">
+                                                    <option value="">State/Province</option>
+
+
+
+                                                    <option value="WY">WY</option>
+                                                    <option value="WI">WI</option>
+                                                    <option value="WV">WV</option>
+                                                    <option value="WA">WA</option>
+                                                    <option value="VA">VA</option>
+                                                    <option value="VT">VT</option>
+                                                    <option value="UT">UT</option>
+                                                    <option value="TX">TX</option>
+                                                    <option value="TN">TN</option>
+                                                    <option value="SD">SD</option>
+                                                    <option value="SC">SC</option>
+                                                    <option value="RI">RI</option>
+                                                    <option value="PA">PA</option>
+                                                    <option value="OR">OR</option>
+                                                    <option value="OK">OK</option>
+                                                    <option value="OH">OH</option>
+                                                    <option value="ND">ND</option>
+                                                    <option value="NC">NC</option>
+                                                    <option value="NY">NY</option>
+                                                    <option value="NM">NM</option>
+                                                    <option value="NJ">NJ</option>
+                                                    <option value="NH">NH</option>
+                                                    <option value="NV">NV</option>
+                                                    <option value="NE">NE</option>
+                                                    <option value="MT">MT</option>
+                                                    <option value="MO">MO</option>
+                                                    <option value="MS">MS</option>
+                                                    <option value="MN">MN</option>
+                                                    <option value="MI">MI</option>
+                                                    <option value="MA">MA</option>
+                                                    <option value="MD">MD</option>
+                                                    <option value="ME">ME</option>
+                                                    <option value="LA">LA</option>
+                                                    <option value="KY">KY</option>
+                                                    <option value="KS">KS</option>
+                                                    <option value="IA">IA</option>
+                                                    <option value="IN">IN</option>
+                                                    <option value="IL">IL</option>
+                                                    <option value="ID">ID</option>
+                                                    <option value="HI">HI</option>
+                                                    <option value="GA">GA</option>
+                                                    <option value="FL">FL</option>
+                                                    <option value="DC">DC</option>
+                                                    <option value="DE">DE</option>
+                                                    <option value="CT">CT</option>
+                                                    <option value="CO">CO</option>
+                                                    <option value="CA">CA</option>
+                                                    <option value="AR">AR</option>
+                                                    <option value="AZ">AZ</option>
+                                                    <option value="AK">AK</option>
+                                                    <option value="AL">AL</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <p style="text-align: justify;"><input type="checkBox" name="data[8]"
+                                                    style="width: 13px; height: 13px;">
+
+                                                By supplying my contact information, I authorize the <a
+                                                    href="https://www.adobe.com/privacy/policy.html#info-share">Adobe
+                                                    family of companies </a> to contact me with <a
+                                                    href="https://www.adobe.com/privacy/marketing.html#mktg-email">personalized</a>
+                                                communications about Adobe’s products and services. See our <a
+                                                    href="https://www.adobe.com/privacy/policy.html">Privacy Policy</a>
+                                                for more details or to <a
+                                                    href="https://auth.services.adobe.com/en_US/deeplink.html?deeplink=ssofirst&callback=https%3A%2F%2Fims-na1.adobelogin.com%2Fims%2Fadobeid%2FSunbreakWebUI1%2FAdobeID%2Ftoken%3Fredirect_uri%3Dhttps%253A%252F%252Faccount.adobe.com%252F%2523old_hash%253D%2526from_ims%253Dtrue%253Fclient_id%253DSunbreakWebUI1%2526api%253Dauthorize%2526scope%253DAdobeID%252Copenid%252Cacct_mgmt_api%252Cgnav%252Csao.cce_private%252Csao.digital_editions%252Ccreative_cloud%252Cread_countries_regions%252Csocial.link%252Cunlink_social_account%252Cadditional_info.address.mail_to%252Cclient.scopes.read%252Cpublisher.read%252Cadditional_info.account_type%252Cadditional_info.roles%252Cadditional_info.social%252Cadditional_info.screen_name%252Cadditional_info.optionalAgreements%252Cadditional_info.secondary_email%252Cadditional_info.secondary_email_verified%252Cadditional_info.phonetic_name%252Cadditional_info.dob%252Cupdate_profile.all%252Csecurity_profile.read%252Csecurity_profile.update%252Cadmin_manage_user_consent%252Cadmin_slo%252Cpiip_write%252Cmps%252Clast_password_update%252Cupdate_email%252Caccount_cluster.read%252Caccount_cluster.update%252Cadditional_info.authenticatingAccount%2526reauth%253Dtrue%26state%3D%257B%2522jslibver%2522%253A%2522v2-v0.31.0-2-g1e8a8a8%2522%252C%2522nonce%2522%253A%25222126177127132771%2522%257D%26code_challenge_method%3Dplain%26use_ms_for_expiry%3Dtrue&client_id=SunbreakWebUI1&scope=AdobeID%2Copenid%2Cacct_mgmt_api%2Cgnav%2Csao.cce_private%2Csao.digital_editions%2Ccreative_cloud%2Cread_countries_regions%2Csocial.link%2Cunlink_social_account%2Cadditional_info.address.mail_to%2Cclient.scopes.read%2Cpublisher.read%2Cadditional_info.account_type%2Cadditional_info.roles%2Cadditional_info.social%2Cadditional_info.screen_name%2Cadditional_info.optionalAgreements%2Cadditional_info.secondary_email%2Cadditional_info.secondary_email_verified%2Cadditional_info.phonetic_name%2Cadditional_info.dob%2Cupdate_profile.all%2Csecurity_profile.read%2Csecurity_profile.update%2Cadmin_manage_user_consent%2Cadmin_slo%2Cpiip_write%2Cmps%2Clast_password_update%2Cupdate_email%2Caccount_cluster.read%2Caccount_cluster.update%2Cadditional_info.authenticatingAccount%2Creauthenticated&denied_callback=https%3A%2F%2Fims-na1.adobelogin.com%2Fims%2Fdenied%2FSunbreakWebUI1%3Fredirect_uri%3Dhttps%253A%252F%252Faccount.adobe.com%252F%2523old_hash%253D%2526from_ims%253Dtrue%253Fclient_id%253DSunbreakWebUI1%2526api%253Dauthorize%2526scope%253DAdobeID%252Copenid%252Cacct_mgmt_api%252Cgnav%252Csao.cce_private%252Csao.digital_editions%252Ccreative_cloud%252Cread_countries_regions%252Csocial.link%252Cunlink_social_account%252Cadditional_info.address.mail_to%252Cclient.scopes.read%252Cpublisher.read%252Cadditional_info.account_type%252Cadditional_info.roles%252Cadditional_info.social%252Cadditional_info.screen_name%252Cadditional_info.optionalAgreements%252Cadditional_info.secondary_email%252Cadditional_info.secondary_email_verified%252Cadditional_info.phonetic_name%252Cadditional_info.dob%252Cupdate_profile.all%252Csecurity_profile.read%252Csecurity_profile.update%252Cadmin_manage_user_consent%252Cadmin_slo%252Cpiip_write%252Cmps%252Clast_password_update%252Cupdate_email%252Caccount_cluster.read%252Caccount_cluster.update%252Cadditional_info.authenticatingAccount%2526reauth%253Dtrue%26response_type%3Dtoken%26state%3D%257B%2522jslibver%2522%253A%2522v2-v0.31.0-2-g1e8a8a8%2522%252C%2522nonce%2522%253A%25222126177127132771%2522%257D&state=%7B%22jslibver%22%3A%22v2-v0.31.0-2-g1e8a8a8%22%2C%22nonce%22%3A%222126177127132771%22%7D&relay=0c15b95d-14f2-4862-a4a5-ed1752a9a06f&locale=en_US&flow_type=token&idp_flow_type=login&reauthenticate=force&s_p=apple%2Cfacebook%2Cgoogle#/">opt-out</a>
+                                                at any time.
+
+
+                                            </p>
+
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <center><button type="submit" id="submit_button" name="submit"
+                                                    class="btn btn-primary"
+                                                    style="background-color:#0d64b0 ; color:white;padding: ;width: 90%;font-weight: bold ; border-radius: 30px;">Submit</button>
+                                            </center>
+                                        </div>
+                                </center>
+                                <br>
+                            </form>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+        </div>
+        <footer style="border-top: 3px solid #003e53; color: black; padding:5px;margin-top: 30px">
+            <div class="span12 center">
+                <br>
+                <p align="center" style="font-size: 13px; ">Copyright © Pangea Global Services, Inc. | <a
+                        href="https://www.pangeaglobalservices.com/unsubscribe/" target="_blank">Click here to
+                        unsubscribe</a> | <a href="https://pangeaglobalservices.com/privacy-policy/"
+                        target="_blank">Privacy Policy</a></p>
+                <p align="left" style=" font-size: 13px; ">
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
